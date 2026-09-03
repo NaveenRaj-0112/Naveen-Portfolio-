@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naveen Raj K | Software Test Engineer</title>
+  <meta name="description" content="Portfolio of Naveen Raj K — Software Test Engineer specializing in Manual & Automation Testing, Selenium WebDriver, Playwright, API Testing, and QA best practices.">
+  <meta name="keywords" content="Naveen Raj K, Software Test Engineer, Manual Testing, Automation Testing, Selenium, Playwright, QA, Portfolio">
+  <meta name="author" content="Naveen Raj K">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Naveen Raj K | Software Test Engineer">
+  <meta property="og:description" content="Software Test Engineer specializing in Manual & Automation Testing, Selenium WebDriver, Playwright, API Testing.">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/profile.png">
+
+  <!-- Preload critical image -->
+  <link rel="preload" as="image" href="assets/images/profile.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-letter">N</div>
+      <div class="loader-full">NAVEEN RAJ K</div>
+      <div class="loader-sub">Software Test Engineer</div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- Three.js Canvas -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-n">N</span>AVEEN
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="profile-wrapper" id="profile-wrapper">
+          <div class="profile-glow"></div>
+          <div class="profile-ring"></div>
+          <img src="assets/images/profile.png" alt="Naveen Raj K - Software Test Engineer" class="profile-img" id="profile-img">
+          <div class="orbit-particles" id="orbit-particles"></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-text">
+          <p class="hero-hello reveal-text">HELLO, I'M</p>
+          <h1 class="hero-name reveal-text">NAVEEN RAJ K</h1>
+          <h2 class="hero-title reveal-text">SOFTWARE TEST ENGINEER</h2>
+          <p class="hero-tags reveal-text">
+            <span>Manual Testing</span>
+            <span class="dot">&#8226;</span>
+            <span>Automation Testing</span>
+            <span class="dot">&#8226;</span>
+            <span>API Testing</span>
+          </p>
+          <p class="hero-summary reveal-text">QA Engineer with hands-on production experience in Manual & Automation Testing within Agile (SDLC/STLC) environments. Proficient in Selenium WebDriver, Playwright, Postman, JIRA, and SQL.</p>
+          <div class="hero-buttons reveal-text">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-rocket"></i> View My Work
+            </a>
+            <a href="assets/resume/Naveenrajk-resume.pdf" download class="btn btn-secondary">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <p>Scroll Down</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">GET TO KNOW ME</span>
+        <h2 class="section-title reveal-text">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-content reveal-text">
+          <p>I'm a dedicated <strong>Software Test Engineer</strong> with hands-on production experience in <strong>Manual & Automation Testing</strong> within Agile (SDLC/STLC) environments.</p>
+          <p>Proficient in <strong>Selenium WebDriver (Java, TestNG, POM)</strong>, <strong>Playwright</strong>, <strong>Postman</strong>, <strong>JIRA</strong>, and <strong>SQL</strong>, with expertise in Functional, Regression, Smoke, Sanity, Integration, and API Testing.</p>
+          <p>I've delivered a <strong>40% improvement in regression testing efficiency</strong> and <strong>30% faster release validation</strong> through automation, while maintaining consistently high-quality production releases.</p>
+        </div>
+        <div class="about-card reveal-text">
+          <div class="glass-card">
+            <div class="card-icon"><i class="fas fa-user-check"></i></div>
+            <h3>Professional Highlights</h3>
+            <ul class="highlight-list">
+              <li><i class="fas fa-check-circle"></i> 95%+ Test Coverage Achieved</li>
+              <li><i class="fas fa-check-circle"></i> 40% Regression Efficiency Improvement</li>
+              <li><i class="fas fa-check-circle"></i> 30% Faster Release Validation</li>
+              <li><i class="fas fa-check-circle"></i> 98% On-Time Defect Resolution</li>
+              <li><i class="fas fa-check-circle"></i> Agile / SDLC / STLC Experience</li>
+              <li><i class="fas fa-check-circle"></i> AI-Assisted Test Automation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">WHAT I WORK WITH</span>
+        <h2 class="section-title reveal-text">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Languages -->
+      <div class="skill-category reveal-text">
+        <h3 class="category-title"><i class="fas fa-code"></i> Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="Java">
+            <div class="skill-icon"><i class="fab fa-java"></i></div>
+            <h4>Java</h4>
+            <div class="skill-level"><div class="level-bar" data-level="90"></div></div>
+            <span class="skill-badge">Proficient</span>
+          </div>
+          <div class="skill-card" data-skill="TypeScript">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h4>TypeScript</h4>
+            <div class="skill-level"><div class="level-bar" data-level="75"></div></div>
+            <span class="skill-badge">Good</span>
+          </div>
+          <div class="skill-card" data-skill="SQL">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <h4>SQL</h4>
+            <div class="skill-level"><div class="level-bar" data-level="80"></div></div>
+            <span class="skill-badge">Good</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Automation Frameworks -->
+      <div class="skill-category reveal-text">
+        <h3 class="category-title"><i class="fas fa-cogs"></i> Automation Frameworks</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="Selenium">
+            <div class="skill-icon"><i class="fas fa-check-double"></i></div>
+            <h4>Selenium WebDriver</h4>
+            <div class="skill-level"><div class="level-bar" data-level="90"></div></div>
+            <span class="skill-badge">Proficient</span>
+          </div>
+          <div class="skill-card" data-skill="TestNG">
+            <div class="skill-icon"><i class="fas fa-vials"></i></div>
+            <h4>TestNG</h4>
+            <div class="skill-level"><div class="level-bar" data-level="85"></div></div>
+            <span class="skill-badge">Proficient</span>
+          </div>
+          <div class="skill-card" data-skill="Playwright">
+            <div class="skill-icon"><i class="fas fa-theater-masks"></i></div>
+            <h4>Playwright</h4>
+            <div class="skill-level"><div class="level-bar" data-level="80"></div></div>
+            <span class="skill-badge">Good</span>
+          </div>
+          <div class="skill-card" data-skill="POM">
+            <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+            <h4>POM</h4>
+            <div class="skill-level"><div class="level-bar" data-level="85"></div></div>
+            <span class="skill-badge">Proficient</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-category reveal-text">
+        <h3 class="category-title"><i class="fas fa-wrench"></i> Tools / Platforms</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="Postman">
+            <div class="skill-icon"><i class="fas fa-paper-plane"></i></div>
+            <h4>Postman</h4>
+            <div class="skill-level"><div class="level-bar" data-level="80"></div></div>
+            <span class="skill-badge">Good</span>
+          </div>
+          <div class="skill-card" data-skill="JIRA">
+            <div class="skill-icon"><i class="fas fa-bug"></i></div>
+            <h4>JIRA</h4>
+            <div class="skill-level"><div class="level-bar" data-level="80"></div></div>
+            <span class="skill-badge">Good</span>
+          </div>
+          <div class="skill-card" data-skill="Git">
+            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+            <h4>Git / GitHub</h4>
+            <div class="skill-level"><div class="level-bar" data-level="75"></div></div>
+            <span class="skill-badge">Good</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testing Types -->
+      <div class="skill-category reveal-text">
+        <h3 class="category-title"><i class="fas fa-shield-alt"></i> Testing Skills</h3>
+        <div class="skills-grid testing-grid">
+          <div class="skill-pill">Manual Testing</div>
+          <div class="skill-pill">Functional Testing</div>
+          <div class="skill-pill">Regression Testing</div>
+          <div class="skill-pill">Smoke Testing</div>
+          <div class="skill-pill">Sanity Testing</div>
+          <div class="skill-pill">Integration Testing</div>
+          <div class="skill-pill">API Testing</div>
+          <div class="skill-pill">Test Case Design</div>
+          <div class="skill-pill">Test Scenario Preparation</div>
+          <div class="skill-pill">Defect Reporting</div>
+          <div class="skill-pill">Bug Tracking</div>
+        </div>
+      </div>
+
+      <!-- AI & Testing -->
+      <div class="skill-category reveal-text">
+        <h3 class="category-title"><i class="fas fa-robot"></i> AI & Testing</h3>
+        <div class="skills-grid testing-grid">
+          <div class="skill-pill">AI-Assisted Test Automation</div>
+          <div class="skill-pill">Test Script Generation</div>
+          <div class="skill-pill">Test Case Generation</div>
+          <div class="skill-pill">MCP Server</div>
+          <div class="skill-pill">AI-Based Test Analysis</div>
+          <div class="skill-pill">Test Data Generation</div>
+          <div class="skill-pill">Defect Analysis</div>
+          <div class="skill-pill">Application Validation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience" class="section experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">MY PROFESSIONAL JOURNEY</span>
+        <h2 class="section-title reveal-text">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+        <!-- Magdyn -->
+        <div class="timeline-item reveal-text">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-company">Magdyn Private Limited</h3>
+                <span class="timeline-role">Software Tester</span>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</span>
+                <span class="timeline-date"><i class="fas fa-calendar"></i> Present</span>
+              </div>
+            </div>
+            <ul class="timeline-list">
+              <li>
+                <i class="fas fa-chevron-right"></i>
+                Performed Functional, Regression, Smoke, and Integration Testing across multiple applications, achieving <strong>95%+ test coverage</strong> and ensuring production readiness.
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i>
+                Executed Manual and Automation Testing using Selenium WebDriver (Java, TestNG, POM) and Playwright, improving <strong>regression testing efficiency by 40%</strong> and reducing <strong>release validation time by 30%</strong>.
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i>
+                Identifying, documenting, and tracking defects using JIRA, collaborating with developers to achieve <strong>98% on-time defect resolution</strong>.
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i>
+                Collaborating with Agile teams to ensure <strong>100% closure of critical defects</strong> before production releases.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DKL -->
+        <div class="timeline-item reveal-text">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-company">DKL Career Development</h3>
+                <span class="timeline-role">Software Testing Intern</span>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</span>
+                <span class="timeline-date"><i class="fas fa-calendar"></i> Jun 2024 – Sep 2024</span>
+              </div>
+            </div>
+            <ul class="timeline-list">
+              <li>
+                <i class="fas fa-chevron-right"></i>
+                Performed Manual Testing of core modules, including Login, Payment, and Booking, by designing and executing test cases based on requirement specifications.
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i>
+                Logged, tracked, and validated defects through Regression, Smoke, and Sanity Testing, ensuring application quality across each release cycle.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== IMPACT / METRICS ========== -->
+  <section id="impact" class="section impact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">MEASURABLE RESULTS</span>
+        <h2 class="section-title reveal-text">Impact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card glass-card reveal-text">
+          <div class="metric-number" data-target="95">0</div>
+          <div class="metric-suffix">%</div>
+          <div class="metric-plus">+</div>
+          <p class="metric-label">Test Coverage</p>
+        </div>
+        <div class="metric-card glass-card reveal-text">
+          <div class="metric-number" data-target="40">0</div>
+          <div class="metric-suffix">%</div>
+          <p class="metric-label">Regression Efficiency Improvement</p>
+        </div>
+        <div class="metric-card glass-card reveal-text">
+          <div class="metric-number" data-target="30">0</div>
+          <div class="metric-suffix">%</div>
+          <p class="metric-label">Faster Release Validation</p>
+        </div>
+        <div class="metric-card glass-card reveal-text">
+          <div class="metric-number" data-target="98">0</div>
+          <div class="metric-suffix">%</div>
+          <p class="metric-label">On-Time Defect Resolution</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">MY WORK</span>
+        <h2 class="section-title reveal-text">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal-text">
+          <div class="project-visual">
+            <div class="project-icon-bg"><i class="fas fa-wallet"></i></div>
+            <div class="project-overlay">
+              <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>MoneyWise Mobile Application</h3>
+            <p>Developed and tested a personal finance management application using Core PHP, covering income, expenses, transactions, dashboard, and financial management features. Performed Functional, Regression, Exploratory, and Security Testing. Designed and executed test cases, developed test scripts, and reported bugs to ensure business and functional requirements were met.</p>
+            <div class="project-tags">
+              <span>Core PHP</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>MySQL</span>
+              <span>XAMPP</span>
+            </div>
+            <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="project-btn">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal-text">
+          <div class="project-visual">
+            <div class="project-icon-bg"><i class="fas fa-industry"></i></div>
+            <div class="project-overlay">
+              <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Ozone Manufacturing ERP</h3>
+            <p>Developed and tested a manufacturing ERP application using Core PHP, covering Quotation, Sales, Inventory, Purchase, Dispatch, Invoice, Customer, and Reporting modules. Performed Functional, Regression, Exploratory, Security Testing, and Test Case Design. Developed and executed test scripts to verify functionality, identify defects, and ensure applications met business requirements.</p>
+            <div class="project-tags">
+              <span>Core PHP</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>MySQL</span>
+              <span>XAMPP</span>
+            </div>
+            <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="project-btn">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal-text">
+          <div class="project-visual">
+            <div class="project-icon-bg"><i class="fas fa-landmark"></i></div>
+            <div class="project-overlay">
+              <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Museum Ticket Booking System</h3>
+            <p>Developed and tested a multilingual chatbot-based museum ticket booking system. Validated chatbot interactions, multilingual responses, booking workflows, confirmations, and data handling across multiple modules.</p>
+            <div class="project-tags">
+              <span>Chatbot</span>
+              <span>Multilingual</span>
+              <span>Booking Workflow</span>
+              <span>Data Validation</span>
+            </div>
+            <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="project-btn">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications" class="section certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">CREDENTIALS</span>
+        <h2 class="section-title reveal-text">Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card glass-card reveal-text">
+          <div class="cert-badge"><i class="fas fa-award"></i></div>
+          <h3>Software Testing — Manual & Automation</h3>
+          <h4>QSpiders</h4>
+          <p class="cert-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+          <p class="cert-date"><i class="fas fa-calendar"></i> Jun 2025 – Mar 2026</p>
+          <div class="cert-details">
+            <h5>Manual Testing</h5>
+            <div class="cert-tags">
+              <span>Functional Testing</span>
+              <span>Integration Testing</span>
+              <span>System Testing</span>
+              <span>Regression Testing</span>
+              <span>Smoke Testing</span>
+              <span>Sanity Testing</span>
+              <span>Exploratory Testing</span>
+              <span>Test Case Design</span>
+              <span>Defect Tracking</span>
+              <span>SDLC/STLC</span>
+              <span>Agile Methodology</span>
+            </div>
+            <h5>Automation & API</h5>
+            <div class="cert-tags">
+              <span>Selenium WebDriver</span>
+              <span>TestNG</span>
+              <span>POM</span>
+              <span>Locators</span>
+              <span>Waits</span>
+              <span>iFrame Handling</span>
+              <span>Window Handling</span>
+              <span>Core Java (OOPs, Collections, Exception Handling)</span>
+              <span>Postman API Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" class="section education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">ACADEMIC BACKGROUND</span>
+        <h2 class="section-title reveal-text">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="education-card glass-card reveal-text">
+        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="edu-info">
+          <h3>Bachelor of Engineering (B.E.)</h3>
+          <h4>Computer Science and Engineering</h4>
+          <p class="edu-college"><i class="fas fa-university"></i> Jaya Engineering College</p>
+          <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+          <p class="edu-date"><i class="fas fa-calendar"></i> 2021 – 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-text">GET IN TOUCH</span>
+        <h2 class="section-title reveal-text">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-text">
+          <h3>Let's Connect</h3>
+          <p>I'm open to discussing testing opportunities, automation strategies, or potential collaborations.</p>
+          <div class="contact-links">
+            <a href="mailto:naveenrajkrishnan2003@gmail.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>naveenrajkrishnan2003@gmail.com</span>
+            </a>
+            <a href="tel:+917094842134" class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 7094842134</span>
+            </a>
+            <a href="https://www.linkedin.com/in/naveen-raj-k-2a47222b4/" target="_blank" class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a href="https://github.com/NaveenRaj0112-Tester" target="_blank" class="contact-item">
+              <i class="fab fa-github"></i>
+              <span>GitHub Profile</span>
+            </a>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Chennai, Tamil Nadu</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal-text">
+          <form id="contact-form" class="contact-form glass-card" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key - Replace YOUR_ACCESS_KEY with your actual key from web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New Contact from Portfolio">
+            <input type="hidden" name="from_name" value="Naveen Raj K Portfolio">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="message_subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div id="form-status" class="form-status"></div>
+            <p class="form-note">Your message will be sent directly to naveenrajkrishnan2003@gmail.com</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 Naveen Raj K. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/naveen-raj-k-2a47222b4/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/NaveenRaj0112-Tester" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:naveenrajkrishnan2003@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
