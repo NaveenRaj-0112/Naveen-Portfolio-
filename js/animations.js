@@ -12,17 +12,46 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ==========================================
-  // LOADER
+  // INTRO COVER
   // ==========================================
+  const INTRO_HOLD = prefersReducedMotion ? 500 : 2600;   // time intro stays visible
+  const INTRO_FADE = prefersReducedMotion ? 60 : 900;      // fade/transition duration
+  const INTRO_MAX = 4500;                                  // hard cap regardless of image load
+
   function hideLoader() {
     const loader = document.getElementById('loader');
-    if (loader) {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-        // Start profile animation immediately
-        setTimeout(startProfileAnimation, 100);
-      }, 800);
+    if (!loader) {
+      startProfileAnimation();
+      return;
     }
+
+    let exited = false;
+    const beginExit = () => {
+      if (exited) return;
+      exited = true;
+      document.body.classList.remove('intro-active');
+      loader.classList.add('hidden');
+      setTimeout(() => {
+        loader.style.display = 'none';
+        startProfileAnimation();
+      }, INTRO_FADE);
+    };
+
+    const img = loader.querySelector('.loader-photo');
+    const imageReady = (img && !img.complete)
+      ? new Promise(resolve => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        })
+      : Promise.resolve();
+
+    const minHold = new Promise(resolve => setTimeout(resolve, INTRO_HOLD));
+    const maxWait = new Promise(resolve => setTimeout(resolve, INTRO_MAX));
+
+    Promise.race([
+      Promise.all([imageReady, minHold]),
+      maxWait
+    ]).then(beginExit);
   }
 
   // ==========================================
@@ -41,6 +70,15 @@
 
     // Animate hero text elements
     animateHeroText();
+
+    // Safety fallback - ensure image is visible even if animation fails
+    setTimeout(() => {
+      const img = document.getElementById('profile-img');
+      if (img && getComputedStyle(img).opacity === '0') {
+        img.style.opacity = '1';
+        img.style.transform = 'none';
+      }
+    }, 2500);
   }
 
   function animateHeroText() {
@@ -235,14 +273,5 @@
 
     // Wait a bit for GSAP to be ready
     setTimeout(initGSAPAnimations, 100);
-
-    // Safety fallback - ensure image is visible even if animation fails
-    setTimeout(() => {
-      const img = document.getElementById('profile-img');
-      if (img && getComputedStyle(img).opacity === '0') {
-        img.style.opacity = '1';
-        img.style.transform = 'none';
-      }
-    }, 2500);
   });
 })();

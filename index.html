@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Naveen Raj K | Software Test Engineer</title>
-  <meta name="description" content="Portfolio of Naveen Raj K — Software Test Engineer specializing in Manual & Automation Testing, Selenium WebDriver, Playwright, API Testing, and QA best practices.">
+  <meta name="description" content="Portfolio of Naveen Raj K â€” Software Test Engineer specializing in Manual & Automation Testing, Selenium WebDriver, Playwright, API Testing, and QA best practices.">
   <meta name="keywords" content="Naveen Raj K, Software Test Engineer, Manual Testing, Automation Testing, Selenium, Playwright, QA, Portfolio">
   <meta name="author" content="Naveen Raj K">
 
@@ -36,15 +36,24 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Loader -->
-  <div id="loader">
+<body class="intro-active">
+  <!-- Intro Cover -->
+  <div id="loader" role="presentation">
     <div class="loader-content">
-      <div class="loader-letter">N</div>
-      <div class="loader-full">NAVEEN RAJ K</div>
-      <div class="loader-sub">Software Test Engineer</div>
+      <div class="loader-photo-wrap">
+        <img src="assets/images/profile.png" alt="" class="loader-photo" fetchpriority="high" decoding="async">
+      </div>
+      <span class="loader-rule"></span>
+      <div class="loader-title">PORTFOLIO BY NAVEEN</div>
+      <p class="loader-sub">Software Test Engineer &middot; QA</p>
     </div>
   </div>
+  <noscript>
+    <style>
+      #loader { display: none !important; }
+      body.intro-active { overflow: auto !important; }
+    </style>
+  </noscript>
 
   <!-- Custom Cursor -->
   <div id="cursor"></div>
@@ -348,7 +357,7 @@
               </div>
               <div class="timeline-meta">
                 <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</span>
-                <span class="timeline-date"><i class="fas fa-calendar"></i> Jun 2024 – Sep 2024</span>
+                <span class="timeline-date"><i class="fas fa-calendar"></i> Jun 2024 â€“ Sep 2024</span>
               </div>
             </div>
             <ul class="timeline-list">
@@ -503,10 +512,10 @@
       <div class="cert-grid">
         <div class="cert-card glass-card reveal-text">
           <div class="cert-badge"><i class="fas fa-award"></i></div>
-          <h3>Software Testing — Manual & Automation</h3>
+          <h3>Software Testing â€” Manual & Automation</h3>
           <h4>QSpiders</h4>
           <p class="cert-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
-          <p class="cert-date"><i class="fas fa-calendar"></i> Jun 2025 – Mar 2026</p>
+          <p class="cert-date"><i class="fas fa-calendar"></i> Jun 2025 â€“ Mar 2026</p>
           <div class="cert-details">
             <h5>Manual Testing</h5>
             <div class="cert-tags">
@@ -555,8 +564,19 @@
           <h4>Computer Science and Engineering</h4>
           <p class="edu-college"><i class="fas fa-university"></i> Jaya Engineering College</p>
           <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
-          <p class="edu-date"><i class="fas fa-calendar"></i> 2021 – 2025</p>
+          <p class="edu-date"><i class="fas fa-calendar"></i> 2021 â€“ 2025</p>
         </div>
+      </div>
+      <div class="education-card glass-card reveal-text">
+        <div class="edu-icon"><i class="fas fa-school"></i></div>
+        <div class="edu-info">
+          <h3>Higher Secondary Certificate (HSC) â€“ Class XII</h3>
+          <h4>Computer Science</h4>
+          <p class="edu-college"><i class="fas fa-university"></i> Dr. Natarajan Matriculation Higher Secondary School</p>
+          <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Nemili, Ranipet District, Tamil Nadu</p>
+          <p class="edu-date"><i class="fas fa-calendar"></i> 2020 â€“ 2021</p>
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -597,29 +617,24 @@
           </div>
         </div>
         <div class="contact-form-wrapper reveal-text">
-          <form id="contact-form" class="contact-form glass-card" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms Access Key - Replace YOUR_ACCESS_KEY with your actual key from web3forms.com -->
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
-            <input type="hidden" name="subject" value="New Contact from Portfolio">
-            <input type="hidden" name="from_name" value="Naveen Raj K Portfolio">
-            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+          <form id="contact-form" class="contact-form glass-card" action="api/send-message.php" method="POST">
             <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <input type="text" id="name" name="name" placeholder="Your Name" required maxlength="100">
             </div>
             <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <input type="email" id="email" name="email" placeholder="Your Email" required maxlength="254">
             </div>
             <div class="form-group">
-              <input type="text" id="subject" name="message_subject" placeholder="Subject" required>
+              <input type="text" id="subject" name="subject" placeholder="Subject" required maxlength="200">
             </div>
             <div class="form-group">
-              <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+              <textarea id="message" name="message" placeholder="Your Message" rows="5" required maxlength="5000"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
             <div id="form-status" class="form-status"></div>
-            <p class="form-note">Your message will be sent directly to naveenrajkrishnan2003@gmail.com</p>
+            <p class="form-note">Your message will be sent securely.</p>
           </form>
         </div>
       </div>
@@ -646,3 +661,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+

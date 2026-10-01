@@ -138,24 +138,47 @@
   }
 
   // ==========================================
-  // CONTACT FORM (Web3Forms)
+  // CONTACT FORM (PHP Backend)
   // ==========================================
   function initContactForm() {
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
     if (!form) return;
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const submitBtn = form.querySelector('button[type="submit"]');
+      // Frontend validation
+      const name = form.querySelector('#name').value.trim();
+      const email = form.querySelector('#email').value.trim();
+      const subject = form.querySelector('#subject').value.trim();
+      const message = form.querySelector('#message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        status.textContent = 'Please fill in all fields.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      // Email format validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      // Disable button and show loading
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
+      status.textContent = '';
+      status.className = 'form-status';
 
       try {
         const formData = new FormData(form);
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch('api/send-message.php', {
           method: 'POST',
           body: formData
         });
@@ -163,25 +186,26 @@
         const result = await response.json();
 
         if (result.success) {
-          status.textContent = 'Message sent successfully!';
+          status.textContent = result.message;
           status.className = 'form-status success';
           form.reset();
         } else {
-          status.textContent = 'Something went wrong. Please try again.';
+          status.textContent = result.message || 'Unable to send your message. Please try again later.';
           status.className = 'form-status error';
         }
       } catch (error) {
-        status.textContent = 'Network error. Please try again.';
+        status.textContent = 'Network error. Please check your connection and try again.';
         status.className = 'form-status error';
       }
 
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
 
+      // Auto-hide status after 8 seconds
       setTimeout(() => {
         status.textContent = '';
         status.className = 'form-status';
-      }, 5000);
+      }, 8000);
     });
   }
 
