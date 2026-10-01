@@ -84,22 +84,17 @@ img {
 }
 
 /* ==========================================
-   INTRO COVER
+   LOADER
    ========================================== */
-body.intro-active {
-  overflow: hidden;
-}
-
 #loader {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: linear-gradient(180deg, #0b0b0f 0%, #131318 55%, #0b0b0f 100%);
+  background: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  transition: opacity 0.9s ease, visibility 0.9s ease;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
 #loader.hidden {
@@ -110,97 +105,47 @@ body.intro-active {
 
 .loader-content {
   text-align: center;
-  max-width: 560px;
-  transform: scale(1);
-  opacity: 1;
-  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
 }
 
-#loader.hidden .loader-content {
-  transform: scale(1.05);
-}
-
-.loader-photo-wrap {
-  width: clamp(150px, 32vw, 220px);
-  height: clamp(150px, 32vw, 220px);
-  margin: 0 auto;
-  padding: 5px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  animation: introFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.1s;
-}
-
-.loader-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  filter: grayscale(100%) contrast(1.05) brightness(1.02);
-}
-
-.loader-rule {
-  display: block;
-  width: 46px;
-  height: 2px;
-  margin: 1.8rem auto 1.2rem;
-  background: var(--accent);
-  opacity: 0;
-  animation: introFadeIn 0.7s ease forwards 0.5s;
-}
-
-.loader-title {
+.loader-letter {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 3.6vw, 1.75rem);
+  font-size: 5rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: loaderPulse 1s ease-in-out infinite alternate;
+}
+
+.loader-full {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.3em;
-  text-indent: 0.3em;
-  text-transform: uppercase;
   color: var(--text-primary);
-  line-height: 1.4;
+  margin-top: 0.5rem;
   opacity: 0;
-  animation: introFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.65s;
+  animation: fadeUp 0.5s ease forwards 0.5s;
 }
 
 .loader-sub {
-  font-size: clamp(0.7rem, 2.2vw, 0.82rem);
-  font-weight: 400;
-  letter-spacing: 0.28em;
-  text-indent: 0.28em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 0.7rem;
+  letter-spacing: 0.2em;
+  margin-top: 0.3rem;
   opacity: 0;
-  animation: introFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.85s;
+  animation: fadeUp 0.5s ease forwards 0.8s;
 }
 
-@keyframes introFadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes loaderPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
-@keyframes introFadeUp {
-  from { opacity: 0; transform: translateY(12px); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 480px) {
-  .loader-title {
-    letter-spacing: 0.2em;
-    text-indent: 0.2em;
-  }
-
-  .loader-sub {
-    letter-spacing: 0.16em;
-    text-indent: 0.16em;
-  }
-
-  .loader-rule {
-    margin: 1.3rem auto 1rem;
-  }
 }
 
 /* ==========================================
@@ -1359,7 +1304,7 @@ body.intro-active {
    ========================================== */
 .education-card {
   max-width: 600px;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto;
   display: flex;
   gap: 1.5rem;
   align-items: center;
@@ -1606,8 +1551,6 @@ a.contact-item:hover span {
 /* ==========================================
    RESPONSIVE
    ========================================== */
-
-/* Tablet */
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1643,22 +1586,9 @@ a.contact-item:hover span {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
-  .cert-card {
-    max-width: 100%;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-/* Mobile Landscape / Small Tablets */
 @media (max-width: 768px) {
-  :root {
-    --nav-height: 60px;
-  }
-
   .nav-links {
     display: none;
   }
@@ -1668,349 +1598,77 @@ a.contact-item:hover span {
   }
 
   .profile-wrapper {
-    width: 220px;
-    height: 220px;
-  }
-
-  .profile-glow {
-    inset: -20px;
-  }
-
-  .profile-ring {
-    inset: -6px;
+    width: 260px;
+    height: 260px;
   }
 
   .section {
-    padding: 60px 0;
-  }
-
-  .section-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    padding: 80px 0;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
   }
 
   .education-card {
     flex-direction: column;
     text-align: center;
-    padding: 1.5rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .edu-icon {
-    font-size: 2.5rem;
   }
 
   .timeline {
-    padding-left: 25px;
-  }
-
-  .timeline-card {
-    padding: 1.5rem;
+    padding-left: 30px;
   }
 
   .timeline-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.3rem;
   }
 
   .timeline-meta {
-    gap: 0.6rem;
-  }
-
-  .timeline-list li {
-    font-size: 0.85rem;
+    gap: 0.8rem;
   }
 
   .skill-card {
     padding: 1.2rem;
   }
 
-  .skill-card h4 {
-    font-size: 0.85rem;
-  }
-
   .testing-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-
-  .cert-card {
-    padding: 1.5rem;
-  }
-
-  .cert-tags span {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  .contact-form {
-    padding: 1.5rem;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.85rem;
-  }
-
-  .glass-card {
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-  }
-
-  .about-content p {
-    font-size: 0.9rem;
-  }
-
-  .scroll-indicator {
-    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
 }
 
-/* Mobile Portrait */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .hero-container {
-    gap: 2rem;
-  }
-
-  .profile-wrapper {
-    width: 180px;
-    height: 180px;
-  }
-
-  .hero-hello {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-  }
-
   .hero-name {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero-title {
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-  }
-
-  .hero-tags {
-    font-size: 0.8rem;
-    gap: 0.4rem;
-  }
-
-  .hero-tags .dot {
-    display: none;
-  }
-
-  .hero-summary {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 1rem;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.8rem;
   }
 
   .btn {
     justify-content: center;
-    padding: 0.65rem 1.2rem;
-    font-size: 0.85rem;
-  }
-
-  .section {
-    padding: 50px 0;
-  }
-
-  .section-tag {
-    font-size: 0.7rem;
   }
 
   .metrics-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-  }
-
-  .metric-card {
-    padding: 1.2rem 0.8rem;
+    grid-template-columns: 1fr;
   }
 
   .metric-number {
-    font-size: 2.2rem;
-  }
-
-  .metric-suffix {
-    font-size: 1.2rem;
-  }
-
-  .metric-label {
-    font-size: 0.75rem;
-  }
-
-  .project-visual {
-    height: 140px;
-  }
-
-  .project-info {
-    padding: 1.2rem;
-  }
-
-  .project-info h3 {
-    font-size: 1rem;
-  }
-
-  .project-info p {
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-
-  .project-tags span {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-  }
-
-  .category-title {
-    font-size: 0.95rem;
-  }
-
-  .testing-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  .skill-pill {
-    font-size: 0.75rem;
-    padding: 0.5rem 0.7rem;
-  }
-
-  .timeline {
-    padding-left: 20px;
-  }
-
-  .timeline-card {
-    padding: 1.2rem;
-  }
-
-  .timeline-company {
-    font-size: 1.1rem;
-  }
-
-  .timeline-role {
-    font-size: 0.85rem;
-  }
-
-  .timeline-list li {
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-
-  .cert-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .cert-card h4 {
-    font-size: 0.95rem;
-  }
-
-  .cert-details h5 {
-    font-size: 0.85rem;
-  }
-
-  .contact-info h3 {
-    font-size: 1.2rem;
-  }
-
-  .contact-item {
-    padding: 0.6rem 0.8rem;
-  }
-
-  .contact-item i {
-    width: 35px;
-    height: 35px;
-    font-size: 0.9rem;
+    font-size: 2.5rem;
   }
 
   .contact-item span {
-    font-size: 0.78rem;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.8rem;
-  }
-
-  .footer-content p {
-    font-size: 0.78rem;
-  }
-
-  .footer-links a {
-    width: 32px;
-    height: 32px;
-  }
-
-  .edu-info h3 {
-    font-size: 1rem;
-  }
-
-  .edu-info h4 {
-    font-size: 0.85rem;
-  }
-
-  .edu-college,
-  .edu-location,
-  .edu-date {
-    font-size: 0.78rem;
-  }
-}
-
-/* Extra Small Screens */
-@media (max-width: 360px) {
-  .profile-wrapper {
-    width: 150px;
-    height: 150px;
-  }
-
-  .hero-name {
-    font-size: 1.5rem;
-  }
-
-  .hero-title {
     font-size: 0.8rem;
-  }
-
-  .metrics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testing-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -2038,61 +1696,5 @@ a.contact-item:hover span {
 
   .level-bar {
     transition: none;
-  }
-}
-
-/* ==========================================
-   TOUCH & MOBILE OPTIMIZATIONS
-   ========================================== */
-@media (hover: none) and (pointer: coarse) {
-  .skill-card:hover,
-  .project-card:hover,
-  .btn:hover {
-    transform: none;
-  }
-
-  .skill-pill:hover {
-    transform: none;
-  }
-
-  .contact-item:hover {
-    background: transparent;
-    border: none;
-  }
-
-  .footer-links a:hover {
-    transform: none;
-  }
-
-  .project-card:active {
-    transform: scale(0.98);
-  }
-
-  .btn:active {
-    transform: scale(0.97);
-  }
-}
-
-/* iOS Safe Areas */
-@supports (padding: env(safe-area-inset-top)) {
-  #navbar {
-    padding-top: env(safe-area-inset-top);
-  }
-
-  .footer {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-
-  .hero {
-    padding-top: env(safe-area-inset-top);
-  }
-}
-
-/* Prevent iOS zoom on input focus */
-@media screen and (max-width: 768px) {
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    font-size: 16px !important;
   }
 }
