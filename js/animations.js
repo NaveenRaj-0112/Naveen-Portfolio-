@@ -3,7 +3,6 @@
    - GSAP ScrollTrigger animations
    - Scroll reveal system
    - Profile image gravity animation
-   - Orbit particles
    ========================================== */
 
 (function () {
@@ -67,25 +66,6 @@
         }
       );
     });
-  }
-
-  // ==========================================
-  // ORBIT PARTICLES AROUND PROFILE
-  // ==========================================
-  function createOrbitParticles() {
-    const container = document.getElementById('orbit-particles');
-    if (!container) return;
-
-    const particleCount = 12;
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('orbit-particle');
-      particle.style.animationDelay = `${(i / particleCount) * 6}s`;
-      particle.style.animationDuration = `${4 + Math.random() * 4}s`;
-      const scale = 0.5 + Math.random() * 1;
-      particle.style.transform = `scale(${scale})`;
-      container.appendChild(particle);
-    }
   }
 
   // ==========================================
@@ -228,7 +208,6 @@
   // ==========================================
   document.addEventListener('DOMContentLoaded', () => {
     hideLoader();
-    createOrbitParticles();
     initScrollReveal();
     initSkillBars();
     initCounters();

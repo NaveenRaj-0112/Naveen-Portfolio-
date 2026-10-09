@@ -190,16 +190,6 @@ img {
 }
 
 /* ==========================================
-   THREE.JS CANVAS
-   ========================================== */
-#hero-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* ==========================================
    NAVIGATION
    ========================================== */
 #navbar {
@@ -469,29 +459,6 @@ img {
 @keyframes profileFloat {
   0%, 100% { opacity: 1; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-8px); }
-}
-
-/* Orbit Particles */
-.orbit-particles {
-  position: absolute;
-  inset: -40px;
-  z-index: 1;
-}
-
-.orbit-particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--accent);
-  animation: orbitFloat 6s linear infinite;
-}
-
-@keyframes orbitFloat {
-  0% { transform: rotate(0deg) translateX(140px) rotate(0deg); opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); opacity: 1; }
 }
 
 /* Hero Right - Text */
